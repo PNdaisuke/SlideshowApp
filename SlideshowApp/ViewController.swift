@@ -11,6 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBAction func onTapimage(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toNext", sender: nil)
+        
+    }
     
     var nowIndex:Int = 0
     
@@ -69,7 +74,7 @@ class ViewController: UIViewController {
         
         if (timer == nil) {
             
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
             
             startButton.setTitle("停止", for: .normal)
             
@@ -96,5 +101,12 @@ class ViewController: UIViewController {
         imageView.image = imageArray[nowIndex]
         
     }
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        
+    }
+    
+    
+    
 }
 
