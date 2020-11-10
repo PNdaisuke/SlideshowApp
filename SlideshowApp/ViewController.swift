@@ -27,6 +27,44 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
+    
+    @IBAction func nextButton(_ sender: Any) {
+        if nowIndex == 0 {
+            
+            nowIndex = 1
+            
+        } else if nowIndex == 1 {
+            
+            nowIndex = 2
+            
+        } else if nowIndex == 2 {
+            
+            nowIndex = 0
+            
+        }
+        
+        imageView.image = imageArray[nowIndex]
+        
+    }
+    @IBAction func backButton(_ sender: Any) {
+        if nowIndex == 2 {
+            
+            nowIndex = 0
+            
+        } else if nowIndex == 0 {
+            
+            nowIndex = 1
+            
+        } else if nowIndex == 1 {
+            
+            nowIndex = 2
+            
+        }
+        
+        imageView.image = imageArray[nowIndex]
+
+    }
+    
     @IBAction func slideShowButton(_ sender: Any) {
         
         if (timer == nil) {
@@ -43,7 +81,6 @@ class ViewController: UIViewController {
             
             startButton.setTitle("再生", for: .normal)
         }
-        
     }
     
     @objc func changeImage() {
@@ -59,7 +96,5 @@ class ViewController: UIViewController {
         imageView.image = imageArray[nowIndex]
         
     }
-    
-
 }
 
