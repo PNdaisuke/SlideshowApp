@@ -22,9 +22,9 @@ class ViewController: UIViewController {
     var timer: Timer!
     
     var imageArray: [UIImage] = [
-        UIImage(named: "earth-11015_1280")!,
-        UIImage(named: "saturn-54999_640")!,
-        UIImage(named: "sunrise-1756274_1280")!
+        UIImage(named: "earth-11015_1280.jpg")!,
+        UIImage(named: "saturn-54999_640.jpg")!,
+        UIImage(named: "sunrise-1756274_1280.jpg")!
     ]
     
     override func viewDidLoad() {
@@ -105,8 +105,6 @@ class ViewController: UIViewController {
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
         
     }
-    
-    
     
 }
 
