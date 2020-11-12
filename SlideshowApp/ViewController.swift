@@ -33,6 +33,13 @@ class ViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toNext" {
+            let nextVC = (segue.destination as! NextViewController)
+            nextVC.image = imageView.image!
+        }
+    }
+    
     @IBAction func nextButton(_ sender: Any) {
         if nowIndex == 0 {
             
