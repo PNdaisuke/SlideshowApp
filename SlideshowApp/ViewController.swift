@@ -13,11 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var nButton: UIButton!
     @IBOutlet weak var bButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-    @IBAction func onTapimage(_ sender: Any) {
-        
-        performSegue(withIdentifier: "toNext", sender: nil)
-        
-    }
     
     var nowIndex:Int = 0
     
@@ -33,6 +28,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+    }
+    
+    @IBAction func onTapimage(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toNext", sender: nil)
+            
+            timer.invalidate()
+            
+            timer = nil
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -126,6 +131,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        
+        if (timer == nil) {
+            
+          timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+            
+        }
         
     }
     
