@@ -28,16 +28,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        imageView.image = imageArray[nowIndex]
+        
     }
     
     @IBAction func onTapimage(_ sender: Any) {
-        
-        performSegue(withIdentifier: "toNext", sender: nil)
-            
-            timer.invalidate()
-            
-            timer = nil
 
+            performSegue(withIdentifier: "toNext", sender: nil)
+        
+        if self.timer != nil {
+            
+            self.timer.invalidate()
+            
+            self.timer = nil
+            
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,17 +75,17 @@ class ViewController: UIViewController {
         
     }
     @IBAction func backButton(_ sender: Any) {
-        if nowIndex == 2 {
+        if nowIndex == 0 {
             
-            nowIndex = 0
+            nowIndex = 2
             
-        } else if nowIndex == 0 {
+        } else if nowIndex == 2 {
             
             nowIndex = 1
             
         } else if nowIndex == 1 {
             
-            nowIndex = 2
+            nowIndex = 0
             
         }
         
