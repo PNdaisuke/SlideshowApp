@@ -52,7 +52,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bButton" destination="xkI-Lc-8k2" id="nHq-y4-ak6"/>
                         <outlet property="imageView" destination="FXN-bl-Xmw" id="9tJ-bA-HR0"/>
+                        <outlet property="nButton" destination="zem-Kr-4YY" id="nbF-RH-lcS"/>
                         <outlet property="startButton" destination="ddD-fS-uJH" id="URw-4i-KPp"/>
                         <segue destination="MGM-ag-UEH" kind="show" identifier="toNext" id="fMe-hT-tE1"/>
                     </connections>

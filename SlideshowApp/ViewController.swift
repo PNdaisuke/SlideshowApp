@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var nButton: UIButton!
+    @IBOutlet weak var bButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBAction func onTapimage(_ sender: Any) {
         
@@ -34,9 +36,13 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "toNext" {
+            
             let nextVC = (segue.destination as! NextViewController)
+            
             nextVC.image = imageView.image!
+            
         }
     }
     
@@ -85,6 +91,10 @@ class ViewController: UIViewController {
             
             startButton.setTitle("停止", for: .normal)
             
+            nButton.isEnabled = false
+            
+            bButton.isEnabled = false
+            
         } else {
             
             timer.invalidate()
@@ -92,7 +102,13 @@ class ViewController: UIViewController {
             timer = nil
             
             startButton.setTitle("再生", for: .normal)
+            
+            nButton.isEnabled = true
+            
+            bButton.isEnabled = true
+            
         }
+        
     }
     
     @objc func changeImage() {
