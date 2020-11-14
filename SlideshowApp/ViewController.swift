@@ -137,13 +137,14 @@ class ViewController: UIViewController {
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
         
-        if (timer == nil) {
+        let title = startButton.title(for: .normal)
+        
+        if (title == "停止") {
             
-          timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
             
         }
         
     }
     
 }
-
